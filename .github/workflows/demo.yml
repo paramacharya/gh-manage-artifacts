@@ -60,14 +60,17 @@ jobs:
       - name: Get code
         uses: actions/checkout@v4
       - name: cache dependencies
+        id: cache
         uses: actions/cache@v4
         with:
-          path: ~/.npm
+          #path: ~/.npm
+          path: node-module
           key: deps-node-modules-${{ hashFiles('**/package-lock.json')}}
           restore-keys: |
             deps-node-modules-
             deps-
       - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
       - name: Build website
         run: npm run build
