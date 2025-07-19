@@ -17,9 +17,9 @@ jobs:
           #path: ~/.npm
           path: node-modules
           key: deps-node-modules-${{ hashFiles('**/package-lock.json')}}
-          restore-keys: |
-            deps-node-modules-
-            deps-
+#          restore-keys: |
+#            deps-node-modules-
+#            deps-
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
@@ -37,9 +37,9 @@ jobs:
           #path: ~/.npm
           path: node-modules
           key: deps-node-modules-${{ hashFiles('**/package-lock.json')}}
-          restore-keys: |
-            deps-node-modules-
-            deps-
+#          restore-keys: |
+#            deps-node-modules-
+#            deps-
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
@@ -66,9 +66,9 @@ jobs:
           #path: ~/.npm
           path: node-modules
           key: deps-node-modules-${{ hashFiles('**/package-lock.json')}}
-          restore-keys: |
-            deps-node-modules-
-            deps-
+#          restore-keys: |
+#            deps-node-modules-
+#            deps-
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
